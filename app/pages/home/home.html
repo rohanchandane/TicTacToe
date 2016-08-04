@@ -1,0 +1,55 @@
+<ion-header>
+  <div class="game-header">
+    Tic Tac Toe
+  </div>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="game-content-outer">
+    <div class="game-content-inner">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-33 class="box">
+            <div class="clickable-area" id="1" clear (click)="submitMove($event)" >{{positionArray[0]}}</div>
+          </ion-col>
+          <ion-col width-33 class="box">
+            <div class="clickable-area" id="2" clear (click)="submitMove($event)"  >{{positionArray[1]}}</div>
+          </ion-col>
+          <ion-col width-33 class="box">
+            <div class="clickable-area" id="3" clear (click)="submitMove($event)"  >{{positionArray[2]}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-33 class="box">
+            <div class="clickable-area" id="4" clear (click)="submitMove($event)"  >{{positionArray[3]}}</div>
+          </ion-col>
+          <ion-col width-33 class="box">
+            <div class="clickable-area" id="5" clear (click)="submitMove($event)"  >{{positionArray[4]}}</div>
+          </ion-col>
+          <ion-col width-33 class="box">
+            <div class="clickable-area" id="6" clear (click)="submitMove($event)"  >{{positionArray[5]}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-33 class="box">
+            <div class="clickable-area" id="7" clear (click)="submitMove($event)"  >{{positionArray[6]}}</div>
+          </ion-col>
+          <ion-col width-33 class="box">
+            <div class="clickable-area" id="8" clear (click)="submitMove($event)"  >{{positionArray[7]}}</div>
+          </ion-col>
+          <ion-col width-33 class="box">
+            <div class="clickable-area" id="9" clear (click)="submitMove($event)"  >{{positionArray[8]}}</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+
+  <div>
+    <span [ngClass]="{'x-user-position': isOactive, 'x-user-position-active': isXactive}"> X </span>
+    <span [ngClass]="{'o-user-position': isXactive, 'o-user-position-active': isOactive}"> O </span>
+  </div>
+
+</ion-content>
