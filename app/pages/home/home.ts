@@ -44,7 +44,7 @@ export class HomePage {
   }
 
   submitMove(event) {
-    if(this.winner === null){
+    if(this.winner === null && this.positionArray[event.target.id - 1] === undefined){
       this.positionArray[event.target.id - 1] = this.currentUser;
 
       if(this.currentUser === 'X') {
@@ -54,7 +54,7 @@ export class HomePage {
         this.oUserMoves.push(parseInt(event.target.id));
         this.checkWinningMoveForO();
       }
-      
+
       if(this.xUserMoves.length + this.oUserMoves.length === 9 && this.winner === null) {
         this.doAlertDraw();
       } else {
@@ -128,7 +128,8 @@ export class HomePage {
             this.initValues();
           }
         }
-      ]
+      ],
+      enableBackdropDismiss: false
     });
     this.navCtrl.present(alert);
   }
@@ -143,7 +144,8 @@ export class HomePage {
             this.initValues();
           }
         }
-      ]
+      ],
+      enableBackdropDismiss: false
     });
     this.navCtrl.present(alert);
   }
