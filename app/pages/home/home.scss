@@ -32,6 +32,7 @@
 
 .game-content-inner {
   display: inline-block;
+  position: relative;
 }
 
 .x-user-position {
@@ -65,4 +66,96 @@
   margin: 20px;
   float: right;
   font-weight: bold;
+}
+
+.alertDanger {
+  .alert-wrapper {
+    //background-color: #51a7e8;
+  }
+  .alert-head {
+    padding: 25px 16px 20px;
+  }
+  .activated {
+    //background-color: #51a7e8;
+  }
+  //color: #ffffff;
+  button{
+    //color: #ffe87c;
+  }
+}
+
+.row1 {
+  position: absolute;
+  width:90%;
+  height:1px;
+  top:18%;
+  left:15px;
+  border-bottom: 2px solid black;
+}
+
+.row2 {
+  position: absolute;
+  width:90%;
+  height:1px;
+  top:50%;
+  left:15px;
+  border-bottom: 2px solid black;
+}
+
+.row3 {
+  position: absolute;
+  width:90%;
+  height:1px;
+  top:82%;
+  left:15px;
+  border-bottom: 2px solid black;
+}
+
+.col1 {
+  position: absolute;
+  width: 2px;
+  height: 90%;
+  top: 15px;
+  left: 18%;
+  background-color: black;
+}
+
+.col2 {
+  position: absolute;
+  width: 2px;
+  height: 90%;
+  top: 15px;
+  left: 50%;
+  background-color: black;
+}
+
+.col3 {
+  position: absolute;
+  width: 2px;
+  height: 90%;
+  top: 15px;
+  left: 82%;
+  background-color: black;
+}
+
+.diagonal1 {
+  border-top: solid black;
+  height: 210px;
+  border-width: 2px;
+  width: 380px;
+  position: absolute;
+  top: 135px;
+  left: -98px;
+  transform: rotate(45.4deg);
+}
+
+.diagonal2 {
+  border-top:solid black;
+  height: 210px;
+  border-width: 2px;
+  width: 380px;
+  position: absolute;
+  top: 135px;
+  left: 56px;
+  transform: rotate(-45.4deg);
 }

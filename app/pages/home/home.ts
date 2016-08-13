@@ -15,6 +15,7 @@ export class HomePage {
   private counter:number;
   private isXactive: boolean;
   private isOactive: boolean;
+  private strikeClass: string;
 
 
 
@@ -41,6 +42,7 @@ export class HomePage {
     this.counter = 0;
     this.isXactive = true;
     this.isOactive = false;
+    this.strikeClass = '';
   }
 
   submitMove(event) {
@@ -89,6 +91,7 @@ export class HomePage {
           }
         }
         if (this.counter === 3) {
+          this.drawStrike(item);
           this.winner = 'X';
           this.doAlertWinner();
           break;
@@ -110,6 +113,7 @@ export class HomePage {
           }
         }
         if (this.counter === 3) {
+          this.drawStrike(item);
           this.winner = 'O';
           this.doAlertWinner();
           break;
@@ -129,7 +133,8 @@ export class HomePage {
           }
         }
       ],
-      enableBackdropDismiss: false
+      enableBackdropDismiss: false,
+      cssClass: 'alertDanger'
     });
     this.navCtrl.present(alert);
   }
@@ -145,12 +150,42 @@ export class HomePage {
           }
         }
       ],
-      enableBackdropDismiss: false
+      enableBackdropDismiss: false,
+      cssClass: 'alertDanger'
     });
     this.navCtrl.present(alert);
   }
 
-
+  drawStrike(item) {
+    switch (item) {
+      case 0:
+        this.strikeClass = 'row1';
+        break;
+      case 1:
+        this.strikeClass = 'row2';
+        break;
+      case 2:
+        this.strikeClass = 'row3';
+        break;
+      case 3:
+        this.strikeClass = 'col1';
+        break;
+      case 4:
+        this.strikeClass = 'col2';
+        break;
+      case 5:
+        this.strikeClass = 'col3';
+        break;
+      case 6:
+        this.strikeClass = 'diagonal1';
+        break;
+      case 7:
+        this.strikeClass = 'diagonal2';
+        break;
+      default:
+        this.strikeClass = '';
+    }
+  }
 
 
 }
